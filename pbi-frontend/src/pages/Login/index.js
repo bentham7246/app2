@@ -27,7 +27,6 @@ function Login(props) {
         try {
             setLoading(true)
             const res = await axios.post(`/api/v1/users/login` , body, config);
-            console.log(res.data.user);
             localStorage.setItem('bi_token', res?.data?.token);
             localStorage.setItem('bi_user', res?.data?.user?.username);
             setLoading(false)
